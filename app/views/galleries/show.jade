@@ -1,0 +1,25 @@
+extends ../layouts/application
+
+block content
+  header
+    h1.title= title
+    a(href='/projects/#{params.project_id}/galleries') Back to gallery
+
+  section.toolbar.clearfix
+    input#image-upload(type='file')
+    input#J-edit.input(type='text', placeholder='换个新名称', maxlength=50, autocomplete='off')
+
+  section.preview
+    - length = versions.length
+    nav
+      a#prev(href='#', class=length === 1 && 'disabled') &laquo; Prev
+      em V#{length}
+      a#next.disabled(href='#') Next &raquo;
+    img#image(src=versions[length - 1])
+
+
+append footer
+  script
+    var versions = '#{versions}'
+    var currentVersion = #{length}
+  != seajs_use('preview')

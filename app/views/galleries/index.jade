@@ -1,0 +1,20 @@
+extends ../layouts/application
+
+block content
+  header
+    h1.title= title
+    a(href='/') Back to list
+
+  ul#gallery
+    li.add
+      input#images-upload(type='file')
+
+    each item in gallery
+      li(id=item._id)
+        a(href='/projects/#{params.project_id}/galleries/#{item._id}')
+          img(src=item.versions.pop())
+          p= item.title
+
+
+append footer
+  != seajs_use('gallery')

@@ -1,0 +1,20 @@
+extends ../layouts/application
+
+block content
+  header.clearfix
+    h1.title.float-l= title
+    input#J-new.input(type='text', placeholder='创建新项目，输入名称后回车', maxlength=50, autocomplete='off')
+
+  ul#projects-list
+    each project in projects
+      - id = project._id
+      li(id=id)
+        em= moment(id.getTimestamp()).format('YYYY-MM-DD HH:mm')
+        a(href='/projects/#{id}/galleries')= project.name
+        span
+          a.edit(href='#', title='编辑')
+          a.del(href='#', title='删除')
+
+
+append footer
+  != seajs_use('index')

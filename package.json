@@ -1,0 +1,26 @@
+{
+  "name": "railstyle-express",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "*",
+    "express-validator": "*",
+    "jade": "*",
+    "js-yaml": "*",
+    "mkdirp": "*",
+    "moment": "*",
+    "mongoskin": "*",
+    "railstyle-router": "*"
+  },
+  "devDependencies": {
+    "node-cc": "*"
+  },
+  "author": {
+    "name": "junjun.zhang",
+    "email": "i@mrzhang.me"
+  },
+  "engines": {
+    "node": "*",
+    "ruby": "*"
+  }
+}
